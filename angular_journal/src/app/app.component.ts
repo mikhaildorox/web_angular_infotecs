@@ -31,7 +31,7 @@ export class AppComponent {
   addNote(description: string) {
     this.notes.unshift({
       id: 0,
-      description: '',
+      description,
       done: false
     });
   }
