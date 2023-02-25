@@ -1,3 +1,4 @@
+// Определяет класс, который содержит логику основной страницы приложения.
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular_journal';
+  title = 'angular journal';
 }
