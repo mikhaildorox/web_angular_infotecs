@@ -1,1 +1,17 @@
-<h2>Note</h2>
+<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
+<!--  <img [src]="note.image" [alt]="note.alt" class="mb-2 w-1/6">-->
+  <h2 class="mb-2 text-md text-center">Note: {{ note.id }}</h2>
+
+  <button
+    class="border py-2 px-4 rounded"
+    [ngClass]="{
+      'bg-amber-300': !details,
+      'bg-blue-300': details
+    }"
+    (click)="details = !details"
+  >
+    {{ details ? 'Hide' : 'Show' }} Details
+  </button>
+  <p *ngIf="details">{{ note.description }}</p>
+<!--  <p>{{ note.done }}</p>-->
+</div>
