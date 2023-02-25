@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core'; // подключаю декорато
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {NoteComponent} from "./components/note/note.component";
 
 // настраиваю приложение
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule
