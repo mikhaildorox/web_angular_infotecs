@@ -35,4 +35,8 @@ export class AppComponent {
       done: false
     });
   }
+
+  remove(item: INote) {
+    this.filterNotes.splice(this.filterNotes.indexOf(item), 1);
+  }
 }

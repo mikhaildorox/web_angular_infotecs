@@ -17,7 +17,8 @@
   <button class="border py-2 px-4 rounded bg-red-400" (click)="addNote(newNote.value)">Add</button>
 </div>
 <!--<app-note [note]="notes[0]"></app-note>-->
+
   <app-note *ngFor="let note of notes; let i = index"
-            [note]="note"></app-note>
+            (remove)="remove(note)" [note]="note"></app-note>
 
 </div>
