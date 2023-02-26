@@ -1,5 +1,7 @@
 <div class="note px-6 py-8 border rounded mb-4 flex flex-col">
+  <!-- дата создания заметки -->
   <span class="font-bold">{{note.date}}</span>
+  <!-- описание заметки -->
   <label class="italic underline" [for]="note.description">{{note.description}}</label>
 
   <div class="btn-wrapper" *ngIf="!editable">
@@ -10,7 +12,6 @@
   <!-- Этот блок отображается, если пользователь кликнул на кнопку Edit -->
   <div *ngIf="editable">
     <input class="sm-text-input" placeholder="edit item" [value]="note.description" #editedNote (keyup.enter)="saveNote(editedNote.value)">
-
     <div class="btn-wrapper">
       <button class="btn" (click)="editable = !editable">Cancel</button>
       <button class="btn btn-save" (click)="saveNote(editedNote.value)">Save</button>

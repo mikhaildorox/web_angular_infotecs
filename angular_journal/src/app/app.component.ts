@@ -9,6 +9,7 @@ import {notes as data} from "./data/notes"
   templateUrl: './app.component.html', //Задает HTML-файл, который нужно связать с этим компонентом.
   styleUrls: ['./app.component.css'] //Предоставляет расположение и имя файла для стилей, которые применяются конкретно к этому компоненту.
 })
+
 export class AppComponent {
   title = 'angular journal';
 
@@ -22,6 +23,7 @@ export class AppComponent {
     return this.notes.filter(note => this.filter === 'done' ? note.done : !note.done);
   }
 
+  // Добавляет новую запись в начало списка
   addNote(description: string) {
     this.notes.unshift({
       date: new Date().toLocaleString(),
@@ -29,7 +31,7 @@ export class AppComponent {
       done: false
     });
   }
-
+  // Удаляет запись по найденному индексу
   remove(note: INote) {
     this.filterNotes.splice(this.filterNotes.indexOf(note), 1);
   }

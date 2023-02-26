@@ -1,3 +1,4 @@
+// описывает компонент
 import {Component, EventEmitter, Input, Output} from '@angular/core'
 import {INote} from "../../models/note";
 
