@@ -12,31 +12,25 @@ import {notes as data} from "./data/notes"
 export class AppComponent {
   title = 'angular journal';
 
-  filter: 'all' | 'active' | 'done' = 'all';
+  filter: 'all' | 'done' = 'all';
 
   notes: INote[] = data
-  // notes: INote[] = [
-  //   { description: 'eat', done: true },
-  //   { description: 'sleep', done: false },
-  //   { description: 'play', done: false },
-  //   { description: 'laugh', done: false },
-  // ];
   get filterNotes() {
     if (this.filter === 'all') {
       return this.notes;
     }
-    return this.notes.filter(item => this.filter === 'done' ? item.done : !item.done);
+    return this.notes.filter(note => this.filter === 'done' ? note.done : !note.done);
   }
 
   addNote(description: string) {
     this.notes.unshift({
-      id: 0,
+      date: new Date().toLocaleString(),
       description,
       done: false
     });
   }
 
-  remove(item: INote) {
-    this.filterNotes.splice(this.filterNotes.indexOf(item), 1);
+  remove(note: INote) {
+    this.filterNotes.splice(this.filterNotes.indexOf(note), 1);
   }
 }

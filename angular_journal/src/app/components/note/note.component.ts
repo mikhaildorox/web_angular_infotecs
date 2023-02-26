@@ -9,7 +9,6 @@ import {INote} from "../../models/note";
 export class NoteComponent {
   @Input() note: INote
 
-  details = false
   editable = false;
 
   @Input() newNote: string;

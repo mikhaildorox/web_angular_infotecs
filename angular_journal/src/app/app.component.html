@@ -2,21 +2,20 @@
 Содержимое этого файла также называется шаблоном.
 Шаблон определяет представление или то, что вы видите в браузере.-->
 <div class="max-w-2xl container mx-auto pt-5">
-<h1 class="text-center font-bold text-lg">{{ title | titlecase }}</h1>
+<h1 class="text-center font-bold text-lg mb-16">{{ title | titlecase }}</h1>
 
   <label class="flex" for="addItemInput">What would you like to do today?</label>
 <div class="flex flex-col items-center mt-2 mb-2">
   <input
     #newNote
     placeholder="add an item"
-    (keyup.enter)="addNote(newNote.value); newNote.value = ''"
+    (keyup.enter)="addNote(newNote.value); newNote.value = '' "
     class="lg-text-input border rounded w-full mb-2"
     id="addItemInput"
   />
 
-  <button class="border py-2 px-4 rounded bg-red-400" (click)="addNote(newNote.value)">Add</button>
+  <button class="btn btn-primary" (click)="addNote(newNote.value); newNote.value = ''">Add</button>
 </div>
-<!--<app-note [note]="notes[0]"></app-note>-->
 
   <app-note *ngFor="let note of notes; let i = index"
             (remove)="remove(note)" [note]="note"></app-note>

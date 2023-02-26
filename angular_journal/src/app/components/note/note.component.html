@@ -1,25 +1,6 @@
-<!--<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">-->
-<!--&lt;!&ndash;  <img [src]="note.image" [alt]="note.alt" class="mb-2 w-1/6">&ndash;&gt;-->
-<!--  <h2 class="mb-2 text-md text-center">Note: {{ note.id }}</h2>-->
-
-<!--  <button-->
-<!--    class="border py-2 px-4 rounded"-->
-<!--    [ngClass]="{-->
-<!--      'bg-amber-300': !details,-->
-<!--      'bg-blue-300': details-->
-<!--    }"-->
-<!--    (click)="details = !details"-->
-<!--  >-->
-<!--    {{ details ? 'Hide' : 'Show' }} Details-->
-<!--  </button>-->
-<!--  <p *ngIf="details">{{ note.description }}</p>-->
-<!--&lt;!&ndash;  <p>{{ note.done }}</p>&ndash;&gt;-->
-<!--</div>-->
-
-<div class="note">
-
-  <input [id]="note.description" type="checkbox" (change)="note.done = !note.done" [checked]="note.done" />
-  <label [for]="note.description">{{note.description}}</label>
+<div class="note px-6 py-8 border rounded mb-4 flex flex-col">
+  <span class="font-bold">{{note.date}}</span>
+  <label class="italic underline" [for]="note.description">{{note.description}}</label>
 
   <div class="btn-wrapper" *ngIf="!editable">
     <button class="btn" (click)="editable = !editable">Edit</button>
